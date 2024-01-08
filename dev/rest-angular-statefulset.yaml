@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  creationTimestamp: null
+  labels:
+    move2kube.konveyor.io/service: rest-angular
+  name: rest-angular
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      move2kube.konveyor.io/service: rest-angular
+  serviceName: rest-angular
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        move2kube.konveyor.io/service: rest-angular
+      name: rest-angular
+    spec:
+      containers:
+        - image: index.docker.io/korificf/rest-angular:latest
+          imagePullPolicy: Always
+          name: rest-angular
+          ports:
+            - containerPort: 8080
+          resources: {}
+      imagePullSecrets:
+        - name: index-docker-io-imagepullsecret
+      restartPolicy: Always
+      securityContext: {}
+  updateStrategy: {}
+status:
+  availableReplicas: 0
+  replicas: 0
