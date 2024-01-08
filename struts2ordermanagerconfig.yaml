@@ -2,12 +2,12 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   creationTimestamp: null
-  name: dotnet5angular
+  name: strts2ordermanager
   namespace: argocd
 spec:
   destination:
     server: https://kubernetes.default.svc
-    namespace: dotnet5angular
+    namespace: strts2ordermanager
   project: "default"
   syncPolicy:   
     syncOptions:
@@ -18,4 +18,4 @@ spec:
 
   source:
     path: dev
-    repoURL: https://github.com/blcporgs/dotnet5angular-deployments.git
+    repoURL: https://github.com/blcporgs/struts2ordermanagerdeployments.git
