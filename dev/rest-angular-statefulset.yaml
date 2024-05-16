@@ -6,7 +6,7 @@ metadata:
     move2kube.konveyor.io/service: rest-angular
   name: rest-angular
 spec:
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       move2kube.konveyor.io/service: rest-angular
